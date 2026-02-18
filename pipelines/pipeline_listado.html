@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado Pipelines - CRM DentOS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link rel="stylesheet" href="pipeline_listado.css">
+</head>
+
+<body>
+  <div class="page">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <!-- Top: Toggle + Divider -->
+      <div class="sidebar-top">
+        <div class="sidebar-toggle-row">
+          <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+            <i class="ti ti-layout-sidebar"></i>
+          </button>
+        </div>
+        <div class="sidebar-divider"></div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item">
+          <i class="ti ti-home nav-icon"></i>
+          <span class="nav-text">Dashboard</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="ti ti-address-book nav-icon"></i>
+          <span class="nav-text">Contactos</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="ti ti-target nav-icon"></i>
+          <span class="nav-text">Oportunidades</span>
+        </a>
+
+        <!-- Configuración group -->
+        <div class="nav-group">
+          <a href="#" class="nav-item nav-item-section" id="configToggle">
+            <i class="ti ti-settings nav-icon"></i>
+            <span class="nav-text">Configuración</span>
+            <i class="ti ti-chevron-down nav-chevron"></i>
+          </a>
+          <!-- Sub-items -->
+          <div class="nav-subitems" id="configSubitems">
+            <a href="#" class="nav-subitem">
+              <i class="ti ti-plug-connected nav-icon"></i>
+              <span class="nav-text">Integraciones</span>
+            </a>
+            <a href="#" class="nav-subitem">
+              <i class="ti ti-forms nav-icon"></i>
+              <span class="nav-text">Campos<br>personalizados</span>
+            </a>
+            <a href="pipeline_listado.html" class="nav-subitem nav-subitem-active">
+              <i class="ti ti-git-branch nav-icon"></i>
+              <span class="nav-text">Pipelines</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Container -->
+    <div class="main-container" id="mainContainer">
+      <!-- Header -->
+      <header class="header animate-slide-down">
+      <div class="header-left">
+        <div class="header-text animate-fade-in-right" style="animation-delay: 0.1s;">
+          <h1 class="welcome-title">Bienvenido</h1>
+          <p class="welcome-subtitle">CRM DentOS</p>
+        </div>
+      </div>
+      <div class="header-right animate-fade-in-left" style="animation-delay: 0.3s;">
+        <div class="user-info">
+          <span class="user-name">Luisa Carreño</span>
+          <span class="user-role">Marketing</span>
+        </div>
+        <div class="user-avatar">
+          <div class="avatar-circle"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Search Bar -->
+      <div class="search-bar animate-fade-in-up" style="animation-delay: 0.3s;">
+        <div class="search-group">
+          <div class="search-input">
+            <i class="ti ti-search"></i>
+            <input type="text" placeholder="Buscar por nombre del pipeline" />
+            <i class="ti ti-microphone"></i>
+          </div>
+          <button class="filter-btn animate-pop" style="animation-delay: 0.5s;">
+            <i class="ti ti-adjustments"></i>
+          </button>
+        </div>
+        <button class="create-btn animate-pop" style="animation-delay: 0.6s;"
+          onclick="window.location.href='pipeline_creacion.html'">
+          <i class="ti ti-filter"></i>
+          <span>Crear pipeline</span>
+        </button>
+      </div>
+
+      <!-- Table Card -->
+      <div class="table-card animate-fade-in-up" style="animation-delay: 0.4s;">
+        <div class="table-section">
+          <!-- Table Header -->
+          <div class="table-header animate-slide-down" style="animation-delay: 0.55s;">
+            <div class="col col-name">Nombres</div>
+            <div class="col-divider"></div>
+            <div class="col col-status">Estado</div>
+            <div class="col-divider"></div>
+            <div class="col col-stages">No. etapas</div>
+            <div class="col-divider"></div>
+            <div class="col col-updated">Actualizado en</div>
+            <div class="col-divider"></div>
+            <div class="col col-actions">Acciones</div>
+          </div>
+
+          <!-- Table Rows -->
+          <div class="table-rows">
+            <!-- Row 1 (active) -->
+            <div class="table-row animate-row" style="animation-delay: 0.6s;">
+              <div class="row-content active-border">
+                <div class="col col-name">
+                  <span class="patient-name">Ortodoncia Inicial</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-status">
+                  <span class="badge badge-active">
+                    <i class="ti ti-circle-check"></i>
+                    Activo
+                  </span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-stages">
+                  <span class="stages-text">3 etapas</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-updated">
+                  <i class="ti ti-history icon-updated"></i>
+                  <span class="updated-text">Hace 2 horas</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-actions">
+                  <button class="action-btn"><i class="ti ti-pencil"></i></button>
+                  <button class="action-btn"><i class="ti ti-key"></i></button>
+                  <button class="action-btn"><i class="ti ti-trash"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="table-row animate-row" style="animation-delay: 0.7s;">
+              <div class="row-content">
+                <div class="col col-name">
+                  <span class="patient-name">Implantes Dentales</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-status">
+                  <span class="badge badge-inactive">
+                    <i class="ti ti-circle-x"></i>
+                    Inactivo
+                  </span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-stages">
+                  <span class="stages-text">5 etapas</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-updated">
+                  <i class="ti ti-history icon-updated"></i>
+                  <span class="updated-text">Hace 1 día</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-actions">
+                  <button class="action-btn"><i class="ti ti-pencil"></i></button>
+                  <button class="action-btn"><i class="ti ti-key"></i></button>
+                  <button class="action-btn"><i class="ti ti-trash"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="table-row animate-row" style="animation-delay: 0.8s;">
+              <div class="row-content">
+                <div class="col col-name">
+                  <span class="patient-name">Blanqueamiento Premium</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-status">
+                  <span class="badge badge-active">
+                    <i class="ti ti-circle-check"></i>
+                    Activo
+                  </span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-stages">
+                  <span class="stages-text">2 etapas</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-updated">
+                  <i class="ti ti-history icon-updated"></i>
+                  <span class="updated-text">Hace 3 días</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-actions">
+                  <button class="action-btn"><i class="ti ti-pencil"></i></button>
+                  <button class="action-btn"><i class="ti ti-key"></i></button>
+                  <button class="action-btn"><i class="ti ti-trash"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="table-row animate-row" style="animation-delay: 0.9s;">
+              <div class="row-content">
+                <div class="col col-name">
+                  <span class="patient-name">Carillas de Porcelana</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-status">
+                  <span class="badge badge-inactive">
+                    <i class="ti ti-circle-x"></i>
+                    Inactivo
+                  </span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-stages">
+                  <span class="stages-text">5 etapas</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-updated">
+                  <i class="ti ti-history icon-updated"></i>
+                  <span class="updated-text">Hace 1 día</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-actions">
+                  <button class="action-btn"><i class="ti ti-pencil"></i></button>
+                  <button class="action-btn"><i class="ti ti-key"></i></button>
+                  <button class="action-btn"><i class="ti ti-trash"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 5 -->
+            <div class="table-row animate-row" style="animation-delay: 1s;">
+              <div class="row-content">
+                <div class="col col-name">
+                  <span class="patient-name">Cirugía Periodontal</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-status">
+                  <span class="badge badge-active">
+                    <i class="ti ti-circle-check"></i>
+                    Activo
+                  </span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-stages">
+                  <span class="stages-text">7 etapas</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-updated">
+                  <i class="ti ti-history icon-updated"></i>
+                  <span class="updated-text">Hace 3 días</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-actions">
+                  <button class="action-btn"><i class="ti ti-pencil"></i></button>
+                  <button class="action-btn"><i class="ti ti-key"></i></button>
+                  <button class="action-btn"><i class="ti ti-trash"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 6 -->
+            <div class="table-row animate-row" style="animation-delay: 1.1s;">
+              <div class="row-content">
+                <div class="col col-name">
+                  <span class="patient-name">Prótesis Removible</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-status">
+                  <span class="badge badge-inactive">
+                    <i class="ti ti-circle-x"></i>
+                    Inactivo
+                  </span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-stages">
+                  <span class="stages-text">6 etapas</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-updated">
+                  <i class="ti ti-history icon-updated"></i>
+                  <span class="updated-text">Hace 1 semana</span>
+                </div>
+                <div class="col-line"></div>
+                <div class="col col-actions">
+                  <button class="action-btn"><i class="ti ti-pencil"></i></button>
+                  <button class="action-btn"><i class="ti ti-key"></i></button>
+                  <button class="action-btn"><i class="ti ti-trash"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    </div>
+  </div>
+
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const mainContainer = document.getElementById('mainContainer');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const configToggle = document.getElementById('configToggle');
+    const configSubitems = document.getElementById('configSubitems');
+
+    // Sidebar collapse/expand
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+      mainContainer.classList.toggle('expanded');
+    });
+
+    // Configuración submenu toggle
+    configToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      configToggle.classList.toggle('open');
+      configSubitems.classList.toggle('open');
+    });
+
+    // Open config submenu by default since Pipelines is active
+    configToggle.classList.add('open');
+    configSubitems.classList.add('open');
+  </script>
+</body>
+
+</html>
