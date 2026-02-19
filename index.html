@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dentos UIUX - Prototipos</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #111827;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        p {
+            color: #6b7280;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .link-card {
+            display: block;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #374151;
+            transition: all 0.2s;
+        }
+        .link-card:hover {
+            border-color: #3b82f6;
+            background-color: #eff6ff;
+            color: #2563eb;
+            transform: translateY(-2px);
+        }
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: #e0e7ff;
+            color: #4338ca;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Prototipos CRM Admin</h1>
+        <p>Selecciona una pantalla para visualizar</p>
+
+        <!-- Módulo Pipelines -->
+        <div>
+            <span class="tag">Módulo Pipelines</span>
+            
+            <a href="./pipelines/pipeline_listado.html" class="link-card">
+                <strong>📄 Listado de Pipelines</strong><br>
+                <small>Vista de tabla principal</small>
+            </a>
+
+            <a href="./pipelines/pipeline_creacion.html" class="link-card">
+                <strong>➕ Creación de Pipeline</strong><br>
+                <small>Formulario de alta</small>
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
