@@ -9,6 +9,8 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
   <link rel="stylesheet" href="pipeline_listado.css">
+  <!-- Rive Animation Library -->
+  <script src="https://unpkg.com/@rive-app/canvas@2.23.7"></script>
 </head>
 
 <body>
@@ -101,11 +103,10 @@
             <i class="ti ti-adjustments"></i>
           </button>
         </div>
-        <button class="create-btn animate-pop" style="animation-delay: 0.6s;"
+        <div class="create-btn-container animate-pop" style="animation-delay: 0.6s;"
           onclick="window.location.href='pipeline_creacion.html'">
-          <i class="ti ti-filter"></i>
-          <span>Crear pipeline</span>
-        </button>
+          <canvas id="rive-canvas" width="500" height="289"></canvas>
+        </div>
       </div>
 
       <!-- Table Card -->
@@ -341,6 +342,21 @@
     // Open config submenu by default since Pipelines is active
     configToggle.classList.add('open');
     configSubitems.classList.add('open');
+
+    // Rive Animation for Create Button
+    const riveInstance = new rive.Rive({
+      src: 'magic-button.riv',
+      canvas: document.getElementById('rive-canvas'),
+      autoplay: true,
+      stateMachines: 'State Machine 1',
+      layout: new rive.Layout({
+        fit: rive.Fit.contain,
+        alignment: rive.Alignment.center
+      }),
+      onLoad: () => {
+        riveInstance.resizeDrawingSurfaceToCanvas();
+      }
+    });
   </script>
 </body>
 
